@@ -1,13 +1,13 @@
 # Redux-From-HexOcean
 
-###Time:
+**Time:**
 ~5 hours
 
-###Versions:
+**Versions:**
 Node: 16.8.0
 NPM: 7.21.0
 
-###Installation:
+**Installation:**
 
 1. Download files
 2. Open folder with IDE (e.g. Visual Studio Code)
@@ -15,4 +15,4 @@ NPM: 7.21.0
 4. Type "npm start" in terminal
 5. Enjoy
 
-####Live preview on codesanbox.io
+###### Live preview on codesanbox.io
