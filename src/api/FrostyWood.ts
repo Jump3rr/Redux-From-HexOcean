@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Api = axios.create({
   headers: {
@@ -8,11 +10,16 @@ const Api = axios.create({
 
 Api.interceptors.response.use(
   (response) => {
-    console.log("Success");
+    toast.success("Success!");
+    toast.info(JSON.stringify(response.data, null, 2), {
+      position: "top-left"
+    });
     return response;
   },
   (err) => {
-    console.log("error");
+    toast.error("Error!", {
+      position: "bottom-left"
+    });
 
     return Promise.reject(err);
   }

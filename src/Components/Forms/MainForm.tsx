@@ -6,6 +6,7 @@ import styled from "styled-components";
 import PizzaForm from "./FoodForms/PizzaForm";
 import SandwichForm from "./FoodForms/SandwichForm";
 import SoupForm from "./FoodForms/SoupForm";
+import { toast } from "react-toastify";
 
 const FieldsContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const FieldsContainer = styled.div`
 
 let MainForm: FC<InjectedFormProps> = (props) => {
   const { handleSubmit } = props;
-  const [selected, changeSelect] = useState("abc");
+  const [selected, changeSelect] = useState("");
 
   return (
     <form onSubmit={handleSubmit} name="mainForm">

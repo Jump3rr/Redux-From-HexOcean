@@ -3,6 +3,7 @@ import MainForm from "./Forms/MainForm";
 import styled from "styled-components";
 import Api from "../api/FrostyWood";
 import { url } from "../api/ApiURL";
+import { ToastContainer } from "react-toastify";
 
 const MainWrapper = styled.div`
   width: 100%;
@@ -23,6 +24,7 @@ export const Home: FC = () => {
   return (
     <MainWrapper>
       <MainForm onSubmit={handleSubmit} />
+      <ToastContainer />
     </MainWrapper>
   );
 };
