@@ -10,7 +10,9 @@ const FieldsContainer = styled.div`
   flex-direction: column;
 `;
 
-const PizzaForm: FC<InjectedFormProps> = () => {
+const SoupForm: FC<InjectedFormProps> = (props) => {
+  const { handleSubmit } = props;
+
   return (
     <FieldsContainer>
       <InputField
@@ -33,5 +35,5 @@ const PizzaForm: FC<InjectedFormProps> = () => {
 };
 
 export default reduxForm({
-  form: "pizzaForm"
-})(PizzaForm);
+  form: "soupForm"
+})(SoupForm);
