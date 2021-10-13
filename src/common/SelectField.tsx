@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Field } from "redux-form";
 import styled from "styled-components";
 import { ISelectField } from "../entities/ISelectField";
@@ -18,7 +18,7 @@ const SelectField = ({ name, onChange }: ISelectField) => {
     <SingleField>
       <Label>Type</Label>
       <Field
-        name="select_food_type"
+        name={name}
         component="select"
         onChange={(e: any) => onChange(e.target.value)}
       >

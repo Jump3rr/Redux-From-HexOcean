@@ -1,17 +1,11 @@
 import React, { FC, useState } from "react";
-import {
-  reduxForm,
-  InjectedFormProps,
-  FormSection,
-  formValueSelector,
-  change
-} from "redux-form";
+import { reduxForm, InjectedFormProps } from "redux-form";
 import InputField from "../../common/InputField";
-import Field from "redux-form";
 import SelectField from "../../common/SelectField";
 import styled from "styled-components";
 import PizzaForm from "./FoodForms/PizzaForm";
-import { connect } from "react-redux";
+import SandwichForm from "./FoodForms/SandwichForm";
+import SoupForm from "./FoodForms/SoupForm";
 
 const FieldsContainer = styled.div`
   display: flex;
@@ -33,29 +27,17 @@ let MainForm: FC<InjectedFormProps> = (props) => {
           component="input"
         />
         <InputField
-          name="preperation_time"
+          name="preparation_time"
           label="Preparation time:"
           type="time"
           component="input"
           step="1"
         />
-        <SelectField name="foodType" onChange={changeSelect} />
+        <SelectField name="type" onChange={changeSelect} />
       </FieldsContainer>
-      {selected === "pizza" && (
-        <FormSection name="pizza">
-          <PizzaForm />
-        </FormSection>
-      )}
-      {selected === "sandwich" && (
-        <FormSection name="pizza">
-          <PizzaForm />
-        </FormSection>
-      )}
-      {selected === "soup" && (
-        <FormSection name="pizza">
-          <PizzaForm />
-        </FormSection>
-      )}
+      {selected === "pizza" && <PizzaForm />}
+      {selected === "sandwich" && <SandwichForm />}
+      {selected === "soup" && <SoupForm />}
       <button type="submit">Submit</button>
     </form>
   );
@@ -63,12 +45,4 @@ let MainForm: FC<InjectedFormProps> = (props) => {
 
 export default reduxForm({
   form: "mainForm"
-})(MainForm);
-
-const selector = formValueSelector("mainForm");
-MainForm = connect((state) => {
-  const dishTypeValue = selector(state, "type");
-  return {
-    dishTypeValue
-  };
 })(MainForm);

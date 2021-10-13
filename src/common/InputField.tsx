@@ -20,7 +20,10 @@ const InputField = ({
   placeholder,
   type,
   component,
-  step
+  step,
+  min,
+  max,
+  parse
 }: IInputField) => {
   return (
     <SingleField>
@@ -31,6 +34,9 @@ const InputField = ({
         type={type}
         placeholder={placeholder}
         step={step}
+        min={min}
+        max={max}
+        parse={parse}
       />
     </SingleField>
   );

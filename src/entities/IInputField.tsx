@@ -5,4 +5,7 @@ export interface IInputField {
   type?: string;
   component?: string;
   step?: string;
+  min?: string;
+  max?: string;
+  parse?: (newValue: string) => number;
 }

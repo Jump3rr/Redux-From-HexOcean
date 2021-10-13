@@ -1,8 +1,5 @@
 import React, { FC } from "react";
-import { reduxForm, InjectedFormProps } from "redux-form";
 import InputField from "../../../common/InputField";
-import Field from "redux-form";
-import SelectField from "../../../common/SelectField";
 import styled from "styled-components";
 
 const FieldsContainer = styled.div`
@@ -10,28 +7,28 @@ const FieldsContainer = styled.div`
   flex-direction: column;
 `;
 
-const PizzaForm: FC<InjectedFormProps> = () => {
+const PizzaForm: FC = () => {
   return (
     <FieldsContainer>
       <InputField
-        name="name"
-        label="Name"
-        placeholder="Name"
-        type="text"
+        name="no_of_slices"
+        label="Number of slices"
+        type="number"
         component="input"
+        min="1"
+        max="20"
+        parse={(newValue: string) => Number.parseInt(newValue, 10)}
       />
       <InputField
-        name="preperation_time"
-        label="Preparation time:"
-        type="time"
+        name="diameter"
+        label="Diameter"
+        type="number"
         component="input"
-        step="1"
+        min="1"
+        max="20"
+        parse={(newValue: string) => Number.parseFloat(newValue)}
       />
-      <button type="submit">Submit</button>
     </FieldsContainer>
   );
 };
-
-export default reduxForm({
-  form: "pizzaForm"
-})(PizzaForm);
+export default PizzaForm;

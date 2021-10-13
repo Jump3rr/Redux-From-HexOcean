@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import MainForm from "./Forms/MainForm";
 import styled from "styled-components";
+import Api from "../api/FrostyWood";
+import { url } from "../api/ApiURL";
 
 const MainWrapper = styled.div`
   width: 100%;
@@ -12,9 +14,12 @@ const MainWrapper = styled.div`
 `;
 
 export const Home: FC = () => {
-  const handleSubmit = () => {
-    console.log("abc");
+  const handleSubmit = (data: any) => {
+    Api.post(url, data)
+      .then((res) => res)
+      .catch((err) => err);
   };
+
   return (
     <MainWrapper>
       <MainForm onSubmit={handleSubmit} />

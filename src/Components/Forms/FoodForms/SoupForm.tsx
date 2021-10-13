@@ -1,8 +1,5 @@
 import React, { FC } from "react";
-import { reduxForm, InjectedFormProps } from "redux-form";
 import InputField from "../../../common/InputField";
-import Field from "redux-form";
-import SelectField from "../../../common/SelectField";
 import styled from "styled-components";
 
 const FieldsContainer = styled.div`
@@ -10,30 +7,20 @@ const FieldsContainer = styled.div`
   flex-direction: column;
 `;
 
-const SoupForm: FC<InjectedFormProps> = (props) => {
-  const { handleSubmit } = props;
-
+const SoupForm: FC = () => {
   return (
     <FieldsContainer>
       <InputField
-        name="name"
-        label="Name"
-        placeholder="Name"
-        type="text"
+        name="spiciness_scale"
+        label="Spiciness scale"
+        type="range"
         component="input"
-      />
-      <InputField
-        name="preperation_time"
-        label="Preparation time:"
-        type="time"
-        component="input"
+        min="1"
+        max="10"
         step="1"
+        parse={(newValue: string) => Number.parseInt(newValue, 10)}
       />
-      <button type="submit">Submit</button>
     </FieldsContainer>
   );
 };
-
-export default reduxForm({
-  form: "soupForm"
-})(SoupForm);
+export default SoupForm;
