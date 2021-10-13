@@ -34,7 +34,7 @@ const Button = styled.button`
 
 const MainForm: FC<InjectedFormProps> = (props) => {
   const { handleSubmit } = props;
-  const [selected, changeSelect] = useState("");
+  const [selected, setSelected] = useState("");
   return (
     <form onSubmit={handleSubmit} name="mainForm">
       <FieldsContainer>
@@ -45,7 +45,7 @@ const MainForm: FC<InjectedFormProps> = (props) => {
           type="time"
           step="1"
         />
-        <SelectField name="type" onChange={changeSelect} />
+        <SelectField name="type" onChange={setSelected} />
       </FieldsContainer>
       {selected === "pizza" && <PizzaForm />}
       {selected === "sandwich" && <SandwichForm />}

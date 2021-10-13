@@ -15,7 +15,7 @@ const MainWrapper = styled.div`
 `;
 
 export const Home: FC = () => {
-  const handleSubmit = (data: any) => {
+  const handleSubmit = (data: object) => {
     Api.post(url, data)
       .then((res) => res)
       .catch((err) => err);
