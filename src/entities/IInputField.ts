@@ -1,11 +1,14 @@
 export interface IInputField {
-  name: string;
-  label: string;
+  input: string;
+  type: string;
+  meta: {
+    touched: string;
+    error: string;
+    warning: string;
+  };
   placeholder?: string;
-  type?: string;
-  component?: string;
   step?: string;
   min?: string;
   max?: string;
-  parse?: (newValue: string) => number;
+  children?: any;
 }

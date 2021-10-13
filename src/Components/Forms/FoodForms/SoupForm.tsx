@@ -1,20 +1,14 @@
 import React, { FC } from "react";
-import InputField from "../../../common/InputField";
-import styled from "styled-components";
-
-const FieldsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+import NumberField from "../../../common/fields/NumberField";
+import { FieldsContainer } from "../../../common/styles/StyledComponents";
 
 const SoupForm: FC = () => {
   return (
     <FieldsContainer>
-      <InputField
+      <NumberField
         name="spiciness_scale"
         label="Spiciness scale"
         type="range"
-        component="input"
         min="1"
         max="10"
         step="1"
