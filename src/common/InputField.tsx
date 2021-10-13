@@ -13,6 +13,7 @@ const Label = styled.label`
 const SingleField = styled.div`
   margin-bottom: 5vh;
 `;
+const required = (value: any) => (value ? undefined : "Required");
 
 const InputField = ({
   name,
@@ -37,7 +38,9 @@ const InputField = ({
         min={min}
         max={max}
         parse={parse}
+        validate={required}
       />
+      {!required && <div>abc</div>}
     </SingleField>
   );
 };

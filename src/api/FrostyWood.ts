@@ -17,6 +17,7 @@ Api.interceptors.response.use(
     return response;
   },
   (err) => {
+    console.log(err);
     toast.error("Error!", {
       position: "bottom-left"
     });
