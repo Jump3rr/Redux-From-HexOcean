@@ -1,21 +1,20 @@
 import React, { FC } from "react";
-import { reduxForm, InjectedFormProps, FormSection } from "redux-form";
-import InputField from "../../common/InputField";
+import { reduxForm, InjectedFormProps } from "redux-form";
+import InputField from "../../../common/InputField";
 import Field from "redux-form";
-import SelectField from "../../common/SelectField";
+import SelectField from "../../../common/SelectField";
 import styled from "styled-components";
-import PizzaForm from "./FoodForms/PizzaForm";
 
 const FieldsContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const MainForm: FC<InjectedFormProps> = (props) => {
+const PizzaForm: FC<InjectedFormProps> = (props) => {
   const { handleSubmit } = props;
 
   return (
-    <form onSubmit={handleSubmit} name="mainForm">
+    <form onSubmit={handleSubmit} name="pizzaForm">
       <FieldsContainer>
         <InputField
           name="name"
@@ -34,19 +33,10 @@ const MainForm: FC<InjectedFormProps> = (props) => {
         <SelectField />
         <button type="submit">Submit</button>
       </FieldsContainer>
-      <FormSection name="pizza">
-        <PizzaForm />
-      </FormSection>
-      <FormSection name="pizza">
-        <PizzaForm />
-      </FormSection>
-      <FormSection name="pizza">
-        <PizzaForm />
-      </FormSection>
     </form>
   );
 };
 
 export default reduxForm({
-  form: "mainForm"
-})(MainForm);
+  form: "painForm"
+})(PizzaForm);

@@ -8,6 +8,7 @@ const MainWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   align-items: center;
+  background-color: #282c34;
 `;
 
 export const Home: FC = () => {
