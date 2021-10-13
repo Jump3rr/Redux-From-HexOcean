@@ -4,8 +4,8 @@
 ~5 hours
 
 **Versions:**
-Node: 16.8.0
-NPM: 7.21.0
+-Node: 16.8.0
+-NPM: 7.21.0
 
 **Installation:**
 
@@ -15,4 +15,4 @@ NPM: 7.21.0
 4. Type "npm start" in terminal
 5. Enjoy
 
-###### Live preview on codesanbox.io
+**Live preview on codesanbox**
